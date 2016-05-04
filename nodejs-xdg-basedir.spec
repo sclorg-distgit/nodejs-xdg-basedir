@@ -7,11 +7,11 @@
 Summary:       Get XDG Base Directory paths
 Name:          %{?scl_prefix}nodejs-%{npm_name}
 Version:       2.0.0
-Release:       4%{?dist}
+Release:       2%{?dist}
 License:       MIT
 URL:           https://github.com/sindresorhus/xdg-basedir
 Source0:       http://registry.npmjs.org/%{npm_name}/-/%{npm_name}-%{version}.tgz
-BuildRequires: %{?scl_prefix}runtime
+BuildRequires: nodejs010-runtime
 ExclusiveArch: %{nodejs_arches} noarch
 BuildArch:     noarch
 Provides:      %{?scl_prefix}nodejs-%{npm_name} = %{version}
@@ -37,9 +37,6 @@ cp -pr index.js package.json %{buildroot}%{nodejs_sitelib}/%{npm_name}
 %{nodejs_sitelib}/%{npm_name}
 
 %changelog
-* Tue Feb 16 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 2.0.0-4
-- Use macro in -runtime dependency
-
 * Thu Jan 07 2016 Tomas Hrcka <thrcka@redhat.com> - 2.0.0-2
 - Enable scl macros
 
